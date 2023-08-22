@@ -1,0 +1,18 @@
+For Refreance
+https://www.tutorialspoint.com/postgresql
+
+Conect To Database
+	sudo su postgres 
+
+Enter psql
+	psql
+
+Show All DB Table
+	ls or ls -l
+
+Create DB
+	create database db_name;
+
+Connect To Table
+	\c db_name;
+

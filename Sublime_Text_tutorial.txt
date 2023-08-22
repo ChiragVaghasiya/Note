@@ -1,0 +1,3 @@
+Ctrl+Shift+L         Code Editing
+Alt+Shift+w          Wrap
+Ctrl+KB              Toggle Side Bar

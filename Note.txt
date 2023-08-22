@@ -1,0 +1,327 @@
+========================= For Odoo Installation =========================
+
+1. Install Requrnments
+    sudo apt install git
+    sudo apt install postgresql
+
+2. Clone Base Code Odoo
+    git clone -b 15.0 https://github.com/odoo/odoo.git
+
+3. As per Requirnment Python Version & Venv Version Download
+    Odoo 15 - Python & It's Venv <= 3.10
+    Odoo 16 - Python & It's Venv <= 3.10 
+
+    1.If Python 3.7 Requrnment then install Python 3.7 & Python Venv
+        sudo apt install software-properties-common  ( Basic Command )
+        sudo add-apt-repository ppa:deadsnakes/ppa ( Basic Command )
+
+        sudo apt install python3.7 ( Install Python3.7 )
+        sudo apt install python3.7-venv   ( Install Python -Venv )
+        ( Uper Command As par Requrnment )
+
+4. Create Venv as Per python Version
+    Python3.10 -m venv venv_name
+    Python3.7 -m venv venv_name 
+    Ex. Python3.10 -m venv odoo-venv
+
+5. Activate Venv
+    source venv_name/bin/activate
+    Ex. source odoo-venv/bin/activate
+
+6. Install Wheel & Requrnment.txt
+    pip3 Install wheel ( If Python Version 10 )
+    pip Install wheel ( If Python Version 7 )
+
+    For Python Version 10 :-
+        psutil ==5.9.5
+        psycopg2-binary ==2.9.6
+        pymssql == 2.2.7
+        # Python-ldap ( Comment )
+        pip3 install -r odoo/requirements.txt
+
+    For Python Version 7 :-
+        psutil ==5.9.5
+        # Python-ldap ( Comment )
+        pyopenssl == 22.1.0 ( AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+                                        aa error )
+
+7. Change User Psql
+    sudo su postgres
+    createuser -s user_name ( Ex. user_name = chirag )
+    psql template1
+    alter user user_name password 'user_pass'; ( Ex. alter user chirag password 'CHIRAG'; )
+
+8. Create Configration file
+    odoo.conf File
+    [options]
+    addons_path = addons paths
+    admin_passwd = admin
+    db_host = localhost
+    db_maxconn = 64
+    db_user = chirag
+    db_password = CHIRAG
+    db_port = 5432
+    db_name = odoo15_1
+    http_port = 8070
+    ( .conf file comment symbol is " ; " 
+       Ex. ; http_port = 8070 )
+
+9. Activate Server
+    1. For Python 3.10
+        python3  ./odoo-bin  -c  .conf_file_path  --logfile="/odoo/odoo-server"
+    2. For Python 3.7
+        python3.7  ./odoo-bin  -c  .conf_file_path  --logfile="/odoo/odoo-server"
+    Ex . python3  ./odoo-bin  -c  /opt/odoo15/conf/odoo.conf  --logfile="/odoo/odoo-server"
+
+10. If Resore Database
+    createdb -O user_name db_name;    ( Ex. createdb -O chirag HRMS )
+    psql -d db_name < path_of_.sql_file   ( Ex. psql -d HRMS < /download/hrms.sql )
+
+11. when you restore new database backup from server to local, use following query to postgres before starting database.
+    sudo su postgres
+    \c db_name
+    delete from ir_mail_server;
+    delete from fetchmail_server;
+    update res_users set password='admin', login='admin' where id=2;
+    update ir_cron set active= False;
+
+12. Start the Server 
+
+
+
+========================= For Python Version 7 Libraries =========================
+
+    Package            Version
+    ------------------ ---------
+    appdirs            1.4.4
+    attrs              23.1.0
+    Babel              2.6.0
+    beautifulsoup4     4.12.2
+    cached-property    1.5.2
+    certifi            2023.7.22
+    cffi               1.15.1
+    chardet            3.0.4
+    cryptography       38.0.4
+    decorator          4.4.2
+    defusedxml         0.7.1
+    docutils           0.16
+    docx-mailmerge     0.5.0
+    docxcompose        1.4.0
+    docxtpl            0.16.7
+    ebaysdk            2.1.5
+    et-xmlfile         1.1.0
+    fiscalyear         0.4.0
+    freezegun          0.3.11
+    gevent             1.5.0
+    greenlet           0.4.15
+    html2text          2020.1.16
+    htmldocx           0.0.6
+    idna               2.8
+    importlib-metadata 6.7.0
+    isodate            0.6.1
+    Jinja2             2.10.1
+    lib                4.0.0
+    libsass            0.18.0
+    lxml               4.3.2
+    MarkupSafe         1.1.0
+    num2words          0.5.6
+    numpy              1.21.6
+    ofxparse           0.19
+    openpyxl           3.1.2
+    pandas             1.3.5
+    passlib            1.7.2
+    Pillow             8.1.2
+    pip                23.2.1
+    polib              1.1.0
+    psutil             5.9.5
+    psycopg2           2.7.7
+    pycparser          2.21
+    pydot              1.4.1
+    pymssql            2.2.7
+    pyOpenSSL          22.1.0
+    pyparsing          3.1.1
+    PyPDF2             1.26.0
+    pyserial           3.4
+    python-dateutil    2.7.3
+    python-docx        0.8.11
+    python-stdnum      1.13
+    pytz               2019.3
+    pyusb              1.0.2
+    qrcode             6.1
+    reportlab          3.5.59
+    requests           2.22.0
+    requests-toolbelt  1.0.0
+    setuptools         47.1.0
+    six                1.16.0
+    soupsieve          2.4.1
+    typing_extensions  4.7.1
+    urllib3            1.25.11
+    vobject            0.9.6.1
+    Werkzeug           0.16.1
+    wheel              0.41.0
+    xlrd               1.1.0
+    XlsxWriter         1.1.2
+    xlwt               1.3.0
+    zeep               3.4.0
+    zipp               3.15.0
+
+
+
+========================= For Python Version 10 Libraries =========================
+
+     Package           Version
+    ----------------- ---------
+    appdirs           1.4.4
+    asn1crypto        1.5.1
+    attrs             23.1.0
+    Babel             2.9.1
+    beautifulsoup4    4.12.2
+    cached-property   1.5.2
+    certifi           2023.7.22
+    cffi              1.15.1
+    chardet           3.0.4
+    cryptography      2.6.1
+    decorator         4.4.2
+    defusedxml        0.7.1
+    docutils          0.16
+    ebaysdk           2.1.5
+    freezegun         0.3.15
+    gevent            21.8.0
+    greenlet          1.1.2
+    idna              2.8
+    isodate           0.6.1
+    Jinja2            2.11.3
+    libsass           0.18.0
+    lxml              4.6.5
+    MarkupSafe        1.1.0
+    num2words         0.5.6
+    ofxparse          0.21
+    passlib           1.7.3
+    Pillow            9.0.1
+    pip               22.0.2
+    polib             1.1.0
+    psutil            5.9.5
+    psycopg2-binary   2.9.6
+    pycparser         2.21
+    pydot             1.4.1
+    pyOpenSSL         19.0.0
+    pyparsing         3.1.1
+    PyPDF2            1.26.0
+    pyserial          3.4
+    python-dateutil   2.7.3
+    python-stdnum     1.13
+    pytz              2023.3
+    pyusb             1.0.2
+    qrcode            6.1
+    reportlab         3.5.59
+    requests          2.25.1
+    requests-toolbelt 1.0.0
+    setuptools        59.6.0
+    six               1.16.0
+    soupsieve         2.4.1
+    urllib3           1.26.5
+    vobject           0.9.6.1
+    Werkzeug          2.0.2
+    wheel             0.41.0
+    xlrd              1.2.0
+    XlsxWriter        1.1.2
+    xlwt              1.3.0
+    zeep              3.4.0
+    zope.event        5.0
+    zope.interface    6.0
+
+
+
+========================= Concept Of has_group && Delet & Creating Group  =========================
+    def write(self, vals):
+
+        res = super(cummulative_details_employee, self).write(vals)
+
+        group_obj = self.env.ref('aspl_payroll_and_contract_extension.group_employee_category')
+
+        if self.employee_no_type == 'permanent_employee' and not self.env.user.has_group('aspl_payroll_and_contract_extension.group_employee_category'):
+
+            group_obj.sudo().users = [(4, self.env.user.id)]
+
+        if self.employee_no_type != 'permanent_employee' and self.env.user.has_group('aspl_payroll_and_contract_extension.group_employee_category'):
+
+            group_obj.sudo().users = [(3, self.env.user.id)]
+
+        return res
+
+
+
+========================= Gitlab =========================
+
+    Git Clone hamesha GitLab ni Master Repo Mathi Levano 
+
+
+
+========================= Sample Code Of Script =========================
+
+    import odoorpc
+    from datetime import date,datetime
+    from dateutil.relativedelta import relativedelta
+
+    self = odoorpc.ODOO('localhost', port=8072)
+    self.login('HRMS', 'admin', 'admin')
+
+    counter_mounths = 4
+    counter_break = 0
+
+    for emp in self.env['hr.employee'].search([]):
+        while(True):
+            date_start = ( date.today() - relativedelta(months=counter_mounths,day=1) ).strftime("%Y-%m-%d 00:00:00")
+            date_end = ( date.today() - relativedelta(months=counter_mounths,day=31) ).strftime("%Y-%m-%d 23:59:59")
+            monthly_attendance = self.env['hr.attendance'].search([('employee_id', '=', emp), ('check_in', '>=', date_start), ('check_out', '<=', date_end)])
+            if not monthly_attendance:
+                counter_break += 1
+                if counter_break == 2:
+                    counter_break = 0
+                    counter_mounths = 4
+                    break
+                else:
+                    counter_mounths += 1
+                    continue
+            counter_mounths += 1
+            montyly_attendance_obj = self.env['hr.attendance'].browse(monthly_attendance)
+            total_hours = sum(montyly_attendance_obj.mapped('worked_hours'))
+            data = {
+                'start_date': date_start,
+                'end_date': date_end,
+                'total_hours': round(total_hours, 2),
+                'employee_id': emp
+            }
+            if self.env['attendance.history'].search([('employee_id', '=', emp), ('start_date', '=', date_start), ('end_date', '=', date_end)]):
+                continue
+            else:
+                self.env['attendance.history'].create(data)
+            montyly_attendance_obj.with_context(allow_modify_confirmed_sheet=True).unlink()
+
+
+
+========================= For Sending Mail Directlly =========================
+
+    template_id = self.env['mail.template'].sudo().search([('name','=','Approve/Reject of Work From Home')])
+    mail_id = template_id.with_context(context).send_mail(self.id,force_send = True)
+
+
+
+========================= For Sending Mail Via Post_params =========================
+
+    post_params = {
+                    'message_type': 'comment',
+                    'subtype_id': 1,
+                    'email_layout_xmlid': 'mail.mail_notification_paynow',
+                    'subject': crm_obj.followup_id.subject,
+                    'body': body_content,
+                    'partner_ids': [crm_obj.partner_id.id],
+                    'author_id': self.env.user.id,
+                    'email_from': crm_obj.user_id.login,
+                    'email_to': crm_obj.partner_id.email,
+                    # 'email_from': '"Purav Gandhi" <pgandhi@aspiresoftserv.com>',
+                    # 'reply_to': 'aspiresolutionsodoo@gmail.com',
+                }
+    ctx = dict(self.env.context)
+    ctx.update({'from_lead_followup': True, 'mail_notify_force_send': True})
+    crm_obj.with_context(ctx).message_post(**post_params)
