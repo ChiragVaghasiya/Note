@@ -74,7 +74,8 @@
     Ex . python3  ./odoo-bin  -c  /opt/odoo15/conf/odoo.conf  --logfile="/odoo/odoo-server"
 
 10. If Resore Database
-    createdb -O user_name db_name;    ( Ex. createdb -O chirag HRMS )
+    sudo su postgres
+    createdb -O user_name db_name    ( Ex. createdb -O chirag HRMS )
     psql -d db_name < path_of_.sql_file   ( Ex. psql -d HRMS < /download/hrms.sql )
 
 11. when you restore new database backup from server to local, use following query to postgres before starting database.
