@@ -15,4 +15,4 @@ Create DB
 
 Connect To Table
 	\c db_name;
-
+	
