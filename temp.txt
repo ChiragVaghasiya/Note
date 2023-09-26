@@ -1,0 +1,82 @@
+Module :- aspl_payroll_and_contract_extension
+
+
+Models :- 
+
+	-- Configuration -- 
+
+		hr.salary.rule.category 
+			( For Salary Rule category Demo Data )
+
+		hr.salary.rule
+			( For Salary Rule Demo Data )
+			Functionalities :- 
+				1. Some Fields Which Have use , When Genrate Paylips Diffrence Income & Deduction Components .
+				2. Written Python Code ( which Have Use In Computation Of Sallary. ) 
+
+		hr.contribution.register
+			( For Demo Data )
+
+		hr.contract.advantage.template
+			( For Demo Data )		
+
+		hr.payroll.structure
+			Functionalities :-
+				1. Add Diffrence Salary Structures Which Have Use In Employee Payslips.
+				2. Add Diffrent sallary rule. 		
+
+	-- Employee Contract -- 
+
+		hr.contract
+			Fnctionalities :- 
+				1. stages :
+					There is 4 stages , which have use In Computation Of Ssallary.
+				2. Load Sallary Components ( Button_)
+					Use for Calculation Of sallary Rule amounts Of the Munth & Year .
+				3. Customize Sallary Rules ( If Any Rule Is Not Considered Then remove. ) 
+
+	-- It Declaration --
+
+		it.declaration.payslip
+			Functionalities :-
+				1. It Decalaration is Considered Income Tax Rules.( Like :- Sec 80C, Other Income, Etc.. )
+
+	-- Payslips Batches --
+
+		hr.payslip.run 
+			Functionalities :-
+				1. Genrate Month Wise & Compny Wise Payslips
+					- Month wise Selected Compuny of all Employee Create a Payslips. 
+					- Auto approve Leave 
+					- Shortfall hours
+					- If Employee On Notice Period Then 1st Month Sallay Hold ,Etc. 
+					- If Employee Last Month Then Auto Considering It's Total Graduaty.  
+				2. sallary Statement
+				3. Bank Sheet
+
+	-- Employee Payslips --
+
+		hr.payslip
+			Functionalities :-
+				1. When Done Stage Of Payslip Sned Mail Button Showing ( Send Payslip User On Mail_Id. ) 
+
+	-- It Statement --
+
+		hr.payslip
+			Functionalities ;-
+				1. Show It Statement Of This Year
+					- Old Regime
+					- New regime
+					- Projected + Ectual Sallary Of This year ( Like Running & New Contract ) 
+				2. Report 
+
+	-- Employee Full Final --
+
+		employee.full.final
+			Functionalities :-
+				1. Notice Period Employee Last Payslips ( Like - When Employee On Notice Period Month )
+				2. Report - Last Month
+
+	-- Report --
+
+		hr.payroll.report.view ( Employee And It's Sallary )
