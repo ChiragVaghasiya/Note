@@ -366,3 +366,10 @@
         
     self.env.ref(xml_id) 
         returns the record corresponding to an XML id
+
+
+
+========================= Auto debugger off =========================
+        
+    In Configration File 
+        Add :- limit_time_real = 1200
