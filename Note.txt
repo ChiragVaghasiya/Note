@@ -373,3 +373,15 @@
         
     In Configration File 
         Add :- limit_time_real = 1200
+
+
+
+========================= Remove .pyc files in git =========================
+        
+    Hit this command in Terminale, where git folder is there "git rm -f *.pyc" 
+
+
+
+========================= Ignore Some Files in git =========================
+        
+    Add gitignore file innside the git repo folder.
