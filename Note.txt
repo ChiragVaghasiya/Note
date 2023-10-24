@@ -53,18 +53,26 @@
 
 8. Create Configration file
     odoo.conf File
-    [options]
-    addons_path = addons paths
-    admin_passwd = admin
-    db_host = localhost
-    db_maxconn = 64
-    db_user = chirag
-    db_password = CHIRAG
-    db_port = 5432
-    db_name = odoo15_1
-    http_port = 8070
+
+        [options]
+        addons_path = /home/chirag/WorkspaceOdoo/Odoo15/odoo/addons,
+                ;/home/chirag/WorkspaceOdoo/Custom_Adons/aspire-erp-15,
+                ;/home/chirag/WorkspaceOdoo/Custom_Adons/RefrenceOdooAdons,
+                ;/home/chirag/WorkspaceOdoo/Custom_Adons/EnterpriceAdons,
+                /home/chirag/WorkspaceOdoo/Custom_Adons/MigrationModules/15,
+                ;/home/chirag/WorkspaceOdoo/Custom_Adons/MigrationModules/16
+        admin_passwd = admin
+        db_host = localhost
+        db_maxconn = 64
+        db_user = chirag
+        db_password = CHIRAG
+        db_port = 5432
+        db_name = odoo15_1
+        limit_time_real = 1200
+        http_port = 8072
+
     ( .conf file comment symbol is " ; " 
-       Ex. ; http_port = 8070 )
+       Ex. ;http_port = 8070 )
 
 9. Activate Server
     1. For Python 3.10
@@ -369,7 +377,7 @@
 
 
 
-========================= Auto debugger off =========================
+========================= Auto Server Close Isuee =========================
         
     In Configration File 
         Add :- limit_time_real = 1200
@@ -385,3 +393,21 @@
 ========================= Ignore Some Files in git =========================
         
     Add gitignore file innside the git repo folder.
+
+
+
+========================= Delet Folder In Opt(Ubantu) =========================
+        
+    sudo rm -R /opt/folder_name
+
+
+
+========================= When First Time Installation Of Module, then run function... =========================
+        
+    In Manifest File :-
+        'pre_init_hook': '_pre_init_update_rule'
+
+    In __init__ File :-
+        def _pre_init_update_rule(cr):
+        cr.execute("""update ir_model_data set noupdate=False where model = 'hr.salary.rule'""")
+    
