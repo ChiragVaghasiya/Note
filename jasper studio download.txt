@@ -324,3 +324,11 @@
 
 11. 
 	tail -f ../logs/catalina.out (again hit this command.)
+12.
+	Database Setup :- 
+	    PostgreSQL (org.postgresql.Driver)
+
+	    jdbc:postgresql://localhost:5432/database_name
+
+
+	java pathh :- /usr/lib/jvm/java-8-openjdk-amd64
