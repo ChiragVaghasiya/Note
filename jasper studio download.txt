@@ -308,23 +308,20 @@
 	Downloads/TIB_js-jrs-cp_7.5.0_bin/jasperreports-server-cp-7.5.0-bin/buildomatic
 	hit this commandd :- sh js-install-ce.sh
 
-8. 
-	Stop the Server
-	sh js-install-ce.sh
-
-9.
+8.
 	Downloads/tomcat8/bin
 	hit this command :- tail -f ../logs/catalina.out
 
-10.
+9.
 	stop the server
 
-11. 
-	start server
+10. 
+	restart server
+		go to in terminal
+			tomcate8/bin/
+			sh catalina.sh start
 
-11. 
-	tail -f ../logs/catalina.out (again hit this command.)
-12.
+11.
 	Database Setup :- 
 	    PostgreSQL (org.postgresql.Driver)
 
@@ -333,9 +330,10 @@
 
 	java pathh :- /usr/lib/jvm/java-8-openjdk-amd64
 
-13.
+12.
 	jasper studio
 	jasper report create
 	in crome :- localhost:8080/jasperserver
 	Server per report upload
-	select Report i uploaded report in server.
+	select Report uploaded report in server.
+	
