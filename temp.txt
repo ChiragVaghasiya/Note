@@ -1,0 +1,12 @@
+
+PostgreSQL (org.postgresql.Driver)
+
+jdbc:postgresql://localhost:5432/database_name
+
+
+
+java pathh :- /usr/lib/jvm/java-8-openjdk-amd64
+
+start the server :
+    tomcate8/bin
+    sh catalina.sh start stop
