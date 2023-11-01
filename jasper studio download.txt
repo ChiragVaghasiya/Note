@@ -332,3 +332,10 @@
 
 
 	java pathh :- /usr/lib/jvm/java-8-openjdk-amd64
+
+13.
+	jasper studio
+	jasper report create
+	in crome :- localhost:8080/jasperserver
+	Server per report upload
+	select Report i uploaded report in server.
