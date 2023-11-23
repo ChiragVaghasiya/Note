@@ -411,3 +411,8 @@
         def _pre_init_update_rule(cr):
         cr.execute("""update ir_model_data set noupdate=False where model = 'hr.salary.rule'""")
     
+
+
+========================= Inherite Transient Module... =========================
+    
+    _inherite = model_name (_name) ( Model nu name Lakhvu... not _inherite ... )
