@@ -92,7 +92,7 @@
     delete from ir_mail_server;
     delete from fetchmail_server;
     update res_users set password='admin', login='admin' where id=2;
-    update ir_cron set active= False;
+    c
 
 12. Start the Server 
 
@@ -413,6 +413,97 @@
     
 
 
-========================= Inherite Transient Module... =========================
+========================= Inherite Transient Model ... =========================
     
-    _inherite = model_name (_name) ( Model nu name Lakhvu... not _inherite ... )
+    When Inherit Transient Model && Also Inherite Another Model then, 
+        _inherit = Model Name (_name)
+
+    Ex.
+
+    ( Aa Model ne Inherite Karvu 6 ... )
+
+    class MailComposer(models.TransientModel):
+        _name = 'mail.compose.message'
+        _inherit = 'mail.composer.mixin'
+        _description = 'Email composition wizard'
+
+    ( To.. _inherit = _name Lakhavu ( 'mail.compose.message' ) 
+           _inherit = _inherit Na Lakhvu ( 'mail.composer.mixin' ) )
+
+    class MailComposer(models.TransientModel):
+        _inherit = 'mail.compose.message'
+
+
+
+========================= SUREKHA , IFE ,& Odoo Apps=========================
+    
+    Surekha Weekly Timesheet :- 
+        Site :- https://odoo.surekhatech.com/web?debug#view_type=form&model=hr_timesheet_sheet.sheet&menu_id=241
+        Terminal :- sudo nano /etc/hosts
+                    Add :- 192.168.1.5 odoo.surekhatech.com
+
+                    VPN
+                 ----------
+             
+            Username    rkarangiya
+            Pwd         6{hQ3x
+            Gateway IP Address GTPL 103.1.101.199
+            Gateway IP Address Airtel   122.179.159.82
+            Connection Type Point-to-Point Tunneling Protocol (PPTP)
+             
+            sudo apt update
+            sudo apt upgrade
+            sudo apt-get install openvpn -y
+            sudo openvpn --config GTPL-VPNConfig.ovpn
+
+                This File :- GTPL-VPNConfig.ovpn
+
+    IFE :- 
+        Production Site :- https://www.odoo.sh/project/ife-gmbh-ife
+
+                https://www.odoo-ife.de/web
+                https://ife-gmbh-ife.odoo.com/web
+                rkarangiya@surekhatech.com
+                rk4Surekha!
+                 
+                Email: rkarangiya@surekhatech.com
+                PwD: Rg@cSk7P5+UZBh4D
+                 
+                github:
+                rkarangiya-surekhatech
+                rk4Surekha!
+                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
+                 
+                 
+                https://ife-gmbh-ife-stage-9577205.dev.odoo.com/web/login
+                 
+                 
+                V12
+                -----------
+                http://www.ife.services/web/login
+                Credentials:
+                User:ife-dev@ife.de
+                PW:hzy5fda1fmq-NHG!kqe
+                 
+                Server:213.239.212.80
+                User: root
+                PW: EHv9VUdbDrB9Ka
+                 
+                 
+                GBS
+                -----------
+                https://gbs-demo.bt-group.com/web/login
+                 
+                Authorisation: web
+                Password: pn463NJdUOSnfJ4rUQJj5qytuD3FrELv
+                Benutzer:Peter.Staude@grundig-gbs.com
+                 
+                PW: Ife2023!!!!
+
+    *********************************************
+            Enterprise github / odoo apps:
+            rkarangiya@aspiresoftware.in
+            odooteam-aspiresoftserv
+            a4Aspire!@#
+            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
+
