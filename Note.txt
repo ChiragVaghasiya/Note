@@ -459,7 +459,7 @@
                 This File :- GTPL-VPNConfig.ovpn
 
     IFE :- 
-        Production Site :- https://www.odoo.sh/project/ife-gmbh-ife
+                Production Site :- https://www.odoo.sh/project/ife-gmbh-ife
 
                 https://www.odoo-ife.de/web
                 https://ife-gmbh-ife.odoo.com/web
@@ -471,8 +471,8 @@
                  
                 github:
                 rkarangiya-surekhatech
-                rk4Surekha!
-                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
+                logn :- rk4Surekha!
+                pass :- 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
                  
                  
                 https://ife-gmbh-ife-stage-9577205.dev.odoo.com/web/login
@@ -507,3 +507,21 @@
             a4Aspire!@#
             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
 
+
+
+
+===================== DELET PYC FILES ======================
+    
+    find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf
+
+
+
+===================== Store Credencial In .git/config File =====================
+
+    [user]
+        email = chirag.vaghasiya@aspiresoftserv.com
+        name = cvaghasiya@012023
+    [credential]
+            helper = store
+
+            

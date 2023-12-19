@@ -1,3 +1,18 @@
-22/11/2023  
-    1. 
-    2. 
+ssh odoodemo@192.168.2.116
+yes
+
+cd project
+cd aspire-erp-15
+ssh odoodemo@192.168.2.116
+yes
+
+user name:- odoodemo
+pw:-    odoodemo@321
+
+cd project
+cd aspire-erp-15
+git status
+  
+192.168.2.116:8069
+
+
