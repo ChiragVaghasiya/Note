@@ -525,3 +525,7 @@
             helper = store
 
             
+
+===================== One2many field create by code =====================
+
+    self.env['relation_model'].create(vals)
