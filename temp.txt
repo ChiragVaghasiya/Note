@@ -8,3 +8,114 @@ yes
 
 user name:- odoodemo
 pw:-    odoodemo@321
+
+
+
+
+
+def load_salary_components(self):
+        _logger.info("Update record called...")
+
+        payslip =self.env['hr.payslip']
+        slip_id = payslip.create({
+                    'employee_id':self.employee_id.id,
+                    'struct_id':self.struct_id.id,
+                    'contract_id':self.id,
+
+                    'worked_days_line_ids': [(0, 0,
+                                {'name':'worked days',
+                                'code':'WORK100',
+                                'number_of_days':20,
+                                'number_of_hours':160,
+                                'contract_id' : self.id
+                                })]
+                    })
+        _logger.info("slip_id %s",slip_id)
+        slip_id.write({
+                    'worked_days_line_ids': [(0, 0,
+                                {'name':'worked days',
+                                'code':'LOP',
+                                'number_of_days':0,
+                                'number_of_hours':0,
+                                'contract_id' : self.id
+                                })]
+                    })
+        _logger.info("Payslip id is: %s",slip_id)
+        self.applicable_salary_rule_ids.unlink()
+        salary_components = slip_id.get_projected_taxable_income_all()
+
+        _logger.info("Calculated components are: %s", salary_components)
+
+        updated_details_dict = []
+        for rule in self.struct_id.rule_ids:
+            _logger.info("Rule: %s",rule)
+            if rule.code in salary_components and rule.appear_on_contract == True:
+                updated_details_dict.append([0,0,{
+                            'amount':salary_components.get(rule.code),
+                            'rule_id': rule.id
+                        }])
+        self.write({'applicable_salary_rule_ids':updated_details_dict})
+
+        salary_components = slip_id.get_projected_taxable_income_all()
+        self.applicable_salary_rule_ids.unlink()
+
+        slip_id.unlink()
+        _logger.info("Calculated components are: %s", salary_components)
+
+        updated_details_dict = []
+        for rule in self.struct_id.rule_ids:
+            _logger.info("Rule: %s", rule)
+            if rule.code in salary_components and rule.appear_on_contract == True:
+                updated_details_dict.append([0, 0, {
+                    'amount': salary_components.get(rule.code),
+                    'rule_id': rule.id
+                }])
+        self.write({'applicable_salary_rule_ids': updated_details_dict})
+
+
+
+
+
+import base64
+import io
+import docx
+ 
+# Decode Base64 content
+file_content = base64.b64decode(letter_doc_content)
+ 
+# Load the Word document from the binary content
+doc = docx.Document(io.BytesIO(file_content))
+ 
+# Replace Content Values
+for paragraph in doc.paragraphs:
+    if "{{ " in paragraph.text:
+        result_runs = []  # Store the runs with replacements
+        i = 0
+        while i < len(paragraph.runs):
+            if "{{ " in paragraph.runs[i].text:
+                # Find the closing "}}"
+                end_index = paragraph.text.find("}}", i + 2)
+ 
+                if end_index != -1:
+                    # Replacing content within curly braces with "KING" in bold
+                    replaced_run = paragraph.add_run("KING")
+                    replaced_run.bold = True
+                    result_runs.append(replaced_run)
+                    i = end_index + 2
+                else:
+                    # If closing "}}" is not found, keep the original text
+                    result_runs.append(paragraph.runs[i])
+                    i += 1
+            else:
+                result_runs.append(paragraph.runs[i])
+                i += 1
+ 
+        # Clear existing runs and add the modified runs
+        for run in paragraph.runs:
+            paragraph.runs.remove(run)
+        for run in result_runs:
+            paragraph.runs.append(run)
+ 
+# Save the modified document
+doc.save("modified_document.docx")
+ 

@@ -81,7 +81,7 @@
         python3.7  ./odoo-bin  -c  .conf_file_path  --logfile="/odoo/odoo-server"
     Ex . python3  ./odoo-bin  -c  /opt/odoo15/conf/odoo.conf  --logfile="/odoo/odoo-server"
 
-10. If Resore Database
+10. If Resotre Database
     sudo su postgres
     createdb -O user_name db_name    ( Ex. createdb -O chirag HRMS )
     psql -d db_name < path_of_.sql_file   ( Ex. psql -d HRMS < /download/hrms.sql )
@@ -91,8 +91,8 @@
     \c db_name
     delete from ir_mail_server;
     delete from fetchmail_server;
+    update ir_cron set active= False;
     update res_users set password='admin', login='admin' where id=2;
-    c
 
 12. Start the Server 
 
@@ -472,7 +472,7 @@
                 github:
                 rkarangiya-surekhatech
                 logn :- rk4Surekha!
-                pass :- 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
+                pass :- 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
                  
                  
                 https://ife-gmbh-ife-stage-9577205.dev.odoo.com/web/login
@@ -529,3 +529,39 @@
 ===================== One2many field create by code =====================
 
     self.env['relation_model'].create(vals)
+
+
+        
+===================== Linux temp File =====================
+
+    Go File Directory Desktop Window 
+        Ctrl + L
+        /
+        Enter
+
+    Go tmp Folder
+
+
+        
+===================== Delete Branch =====================
+
+    git branch -D feature-1726_include_image
+
+
+        
+===================== Kill Port On Local =====================
+
+    npx kill-port 8069
+
+
+
+============================ UPWORK ===============================
+ 
+    rkarangiya@aspiresoftware.in
+    Two4tuesday!
+
+
+
+============================ Delete Table from postgresql ===========================
+
+    delete from hr_salary_rule;
