@@ -1,0 +1,102 @@
+01/03/2024
+
+Hi Alvaro,
+
+
+
+Please find today's status as below:
+
+
+
+• Requirement understanding - Completed. I have added few points below. I need more information on those topics.
+• Features and code mapping - Completed.
+• Implementation - Started with this.
+
+
+
+Points where more clarity is needed:
+• Accounting margin : Cost of sales as per accounting valuation method - I need more information on this one.
+• Other commission (base value is another commission, in this case show Many2many field related to employees to select commission
+from which employees )
+• Rule Type (rule_type – Selection, determines if the basis for the calculation of this commission is just the triggered amount, or if amount from this rule should be accrued according to period field and commission calculation done to total amount at period end)
+- One-shot
+- Cumulative
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+04/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+• Created data structure(model) for following entities:
+	* Commission
+	* Commission Rules
+	* Commission Types
+* Implemented method that set values when sales type is changed.
+
+Tomorrow's Plan:
+* Start implementing triggers
+
+Thanks,
+Ramesh
+
+===========================================================================
+05/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+• Calculate commission base on sale order confirm for differenct criteria like (trigger, salesperson_ids, Date.today() > date_begin, etc...).
+
+
+Tomorrow's Plan:
+
+• Calculate commission base on invoice confirm and payment confirmation 
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+06/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+• Make Journal entry cron and calclute differenct criteria like (Week, Months, Year etc...).
+
+
+Tomorrow's Plan:
+
+• Calculate Journal entry cron (Bi-Month, Trimester, Semester) and calculate commission base on invoice confirm and payment confirmation.
+
+
+
+Can you plz reply to this question.
+
+• Accounting margin : Cost of sales as per accounting valuation method - I need more information on this one.
+• Other commission (base value is another commission, in this case show Many2many field related to employees to select commission
+from which employees )
+• Rule Type (rule_type – Selection, determines if the basis for the calculation of this commission is just the triggered amount, or if amount from this rule should be accrued according to period field and commission calculation done to total amount at period end)
+	- One-shot
+	- Cumulative
+
+
+Thanks,
+Ramesh
+
+===========================================================================
