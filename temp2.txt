@@ -1,19 +1,17 @@
-Task Id : - 8156
-    Add Restriction for Hr, User && Testing For User-side and HR-side and Admin-side.
-    02 : 00
-    Done
+Task Id : - 4583
+    R & D mail Server to odoo server.
+    03 : 30
+    Done	
 
 Task Id : - 4583
-    Extra Testing From Odoo17 Run-boot.
+    Helping dhruval.
+    01 : 00
+    Done
+
+Task Id : - 8582 
+    Try to reach access tokens via microsoft.outlook. and how it's work.
     04 : 00
-    Done
-
-Task Id : - 4583
-    Check IT Rule When Load Component. 
-    02 : 30
-    In Progress
-
+    In progress
 ==========================================================
 
-
-*************** Tasks ***************
+self.session.sid

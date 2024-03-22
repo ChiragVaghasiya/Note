@@ -565,3 +565,10 @@
 ============================ Delete Table from postgresql ===========================
 
     delete from hr_salary_rule;
+
+
+
+============================ Updating git branches in local ===========================
+
+    git remote update
+    

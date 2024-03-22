@@ -100,3 +100,126 @@ Thanks,
 Ramesh
 
 ===========================================================================
+07/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+• Calculate commission base on invoice confirm and payment confirm for different criteria.
+• Make Invoices base on commission records.
+
+
+
+Can you plz reply to this question.
+
+• Accounting margin : Cost of sales as per accounting valuation method - I need more information on this one.
+• Other commission (base value is another commission, in this case show Many2many field related to employees to select commission
+from which employees )
+• Rule Type (rule_type – Selection, determines if the basis for the calculation of this commission is just the triggered amount, or if amount from this rule should be accrued according to period field and commission calculation done to total amount at period end)
+	- One-shot
+	- Cumulative
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+13/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+
+
+• In a sale_type model (add one more selection and calculation as per the requirements, add recipients fields for salesperson and sale teams matching domains as per the requirements like- customer empty, etc...)
+
+
+
+Tomorrow's Plan:
+
+
+
+• Commission model (Calculate team member wise commission)
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+14/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+
+• In a commission model (Calculate team member wise commission)
+• In a commission.type model (Change rule_ids field Many2many to One2many and fix base amount of untaxed_amount, sale_margin and calculating commission amount untaxed_amount, sale_margin)
+
+
+
+Tomorrow's Plan:
+
+
+• Commission model (Calculate team member wise commission)
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+15/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+
+• In a commission model (Calculate account margin like :- stock valuation etc..)
+• In a journal_entry (When cancel or reset draft button then commission report value false.)
+
+
+
+Tomorrow's Plan:
+
+
+• Commission model (Calculate other commssions, done delivery.)
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================
+18/03/2024
+
+Hi Alvaro,
+
+
+
+Today's status
+
+
+• Create commission record 
+	Scenario :- When commission.type.calculation is accounting margin and trigger is "invoice or payment" and fetch the other details then delivery confirm then create a commission record for invoice or payments. 
+
+
+
+
+Thanks,
+Ramesh
+
+===========================================================================

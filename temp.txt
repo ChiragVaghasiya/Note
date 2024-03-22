@@ -55,4 +55,3 @@ for paragraph in doc.paragraphs:
 doc.save("modified_document.docx")
 ====================================================================
 
-
